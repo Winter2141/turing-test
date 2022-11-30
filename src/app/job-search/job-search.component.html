@@ -1,0 +1,145 @@
+<section class="job-search-section">
+  <div class="container">
+    <div class="filter-wrapper">
+      <h2 class="filter-title">Technologies</h2>
+      <div class="filter-box">
+        <ul class="filters">
+          <li *ngFor="let filter of filters">
+            <button (click)="setFilter($event, filter)">{{ filter.name }}</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job-list-wrapper">
+      <div class="job-list">
+        <div class="job-list-scroll">
+          <div class="job-list-box">
+            <ul>
+              <li *ngFor="let job of jobList" class="job-list-item">
+                <div class="job-prevew" (click)="selectJob($event, job)">
+                  <div class="title">{{ job.publicTitle }}</div>
+                  <div class="description">
+                    <div>{{ job.industry }}</div>
+                    <div>{{ showComponaySize(job.companySize) }}</div>
+                    <div><span>{{ showTimeSpacing(job.updatedDate) }}</span></div>
+                  </div>
+                  <div class="skills">
+                    <ul>
+                      <li *ngFor="let skill of job.requiredSkills">
+                        <div>{{ skill.name }}</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="job-detail">
+        <div class="job-container">
+          <div>
+            <div class="header">
+              <div class="title">{{ currentJob.publicTitle }}</div>
+              <div class="detail-wrapper">
+                <div class="info-box">
+                  <div>
+                    Industry: {{ currentJob.industry }}
+                  </div>
+                  <div>
+                    Remote
+                  </div>
+                  <div>
+                    Company Size: {{ currentJob.companySize }}
+                  </div>
+                  <div>
+                    Full-time
+                  </div>
+                  <div>
+                    Not disclosed
+                  </div>
+                </div>
+                <div class="cta">
+                  <a href="#">Apply now</a>
+                </div>
+              </div>
+              <ul class="skills">
+                <li *ngFor="let skill of currentJob.requiredSkills">
+                  <div>{{ skill.name }}</div>
+                </li>
+              </ul>
+              <div class="posted-date">{{ showTimeSpacing(currentJob.updatedDate, 'Posted about ') }}</div>
+            </div>
+            <div class="description">
+              <p class="title">Job Description</p>
+              <div class="content" [innerHTML]="currentJob.description"></div>
+              <div class="view-full-link">
+                <a href="#">View full job description</a>
+              </div>
+            </div>
+          </div>
+          <section class="guide-section">
+            <div class="container">
+              <div class="header">
+                <div class="header-line">
+                  <h2 class="title">How to become a Turing developer?</h2>
+                  <div>Work with the best software companies in just 4 easy steps</div>
+                </div>
+              </div>
+              <ol class="content">
+                <li>
+                  <div class="process-box">
+                    <span class="index">1</span>
+                    <div class="text">
+                      <h3>Create your profile</h3>
+                      <p>Fill in your basic details - Name, location, skills, salary, & experience.</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="process-box">
+                    <span class="index">2</span>
+                    <div class="text">
+                      <h3>Take our tests and interviews</h3>
+                      <p>Solve questions and appear for technical interview.</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="process-box">
+                    <span class="index">3</span>
+                    <div class="text">
+                      <h3>Receive job offers</h3>
+                      <p>Get matched with the best US and Silicon Valley companies.</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="process-box">
+                    <span class="index">4</span>
+                    <div class="text">
+                      <h3>Start working on your dream job</h3>
+                      <p>Once you join Turing, you’ll never have to apply for another job.</p>
+                    </div>
+                  </div>
+                </li>
+              </ol>
+              <div class="cta">
+                <a href="#">Apply now</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-more-read">
+      <div class="title">Want to explore more jobs?</div>
+      <div class="description">Apply to Turing today.</div>
+      <div class="cta">
+        <a href="#">Apply now</a>
+      </div>
+    </div>
+  </div>
+</section>
