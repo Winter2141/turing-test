@@ -138,28 +138,31 @@ export class JobSearchComponent implements OnInit {
     if(this.selectedFilters.length === 0) {
       this.jobList = jobs;
       this.currentJob = jobs[0];
-      return;
+    } else {
+      const filteredJobs = jobs.filter((job: Job) => {
+        if(job.requiredSkills.length === 0) {
+          return false;
+        }
+        const requireIndex = job.requiredSkills.findIndex(skill => this.selectedFilters.includes(skill.id))
+        if(requireIndex !== -1) {
+          return true;
+        }
+        if(job.optionalSkills.length === 0) {
+          return false;
+        }
+        const optionIndex = job.optionalSkills.findIndex(skill => this.selectedFilters.includes(skill.id))
+        if(optionIndex !== -1) {
+          return true;
+        }
+        return false;
+      });
+      this.jobList = filteredJobs;
+      if(filteredJobs.length) {
+        this.currentJob = filteredJobs[0];
+      }
     }
-    const filteredJobs = jobs.filter((job: Job) => {
-      if(job.requiredSkills.length === 0) {
-        return false;
-      }
-      const requireIndex = job.requiredSkills.findIndex(skill => this.selectedFilters.includes(skill.id))
-      if(requireIndex !== -1) {
-        return true;
-      }
-      if(job.optionalSkills.length === 0) {
-        return false;
-      }
-      const optionIndex = job.optionalSkills.findIndex(skill => this.selectedFilters.includes(skill.id))
-      if(optionIndex !== -1) {
-        return true;
-      }
-      return false;
-    });
-    this.jobList = filteredJobs;
-    if(filteredJobs.length) {
-      this.currentJob = filteredJobs[0];
+    if(this.jobList.length > 30) {
+      this.jobList = this.jobList.slice(30, this.jobList.length-1);
     }
     //this.jobService.getJobs(params).subscribe(jobs => this.jobList = jobs);
     //console.log(this.jobList);

@@ -1,0 +1,21 @@
+
+    .footer-social {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      gap: 4px;
+      padding: 20px 0 10px 0;
+      li a {
+        display: inline-block;
+        color: #ccc;
+        position: relative;
+        text-decoration: none;
+        &::after {
+          display: none;
+        }
+        span {
+          padding: 2px;
+          font-size: 20px;
+        }
+      }
+    }

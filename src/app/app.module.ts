@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { JobSearchComponent } from './job-search/job-search.component';
 import { GuideComponent } from './guide/guide.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './footer/footer.component';
+import { SocialComponent } from './social/social.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     JobSearchComponent,
     GuideComponent,
+    FooterComponent,
+    SocialComponent,
   ],
   imports: [
     BrowserModule,

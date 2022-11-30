@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --fz-h1: 48px;
+  --fz-h2: 28px;
+  --fz-h3: 20px;
+  --fz-h4: 16px;
+  --fz-h5: 16px;
+  --fz-h6: 16px;
+}
+@media screen and (max-width: 1200px) {
+  :root {
+    --fz-h1: 48px;
+    --fz-h2: 28px;
+  }
+}
+@media screen and (max-width: 767px) {
+  :root {
+    --fz-h1: 28px;
+    --fz-h2: 20px;
+    --fz-h3: 16px;
+    --fz-h4: 15px;
+    --fz-h5: 14px;
+    --fz-h6: 13px;
+    --fz-paragraph: 14px;
+    --fz-paragraph-lg: 16px;
+  } 
+}
+body {
+  margin: 0;
+}
+p, h1, h2, h3, h4, h5, h6, div, span, ul, li {
+  margin: 0;
+  padding: 0;
+}
+ul, li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
