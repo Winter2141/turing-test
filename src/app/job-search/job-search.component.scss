@@ -128,6 +128,10 @@ p, h1, h2, h3, h4, h5, h6, div, span, ul, li {
                       display: block;
                     }
                   }
+                  .ng-fa-icon {
+                    margin-right: 8px;
+                    font-size: 18px;
+                  }
                 }
               }
               .skills {
@@ -188,6 +192,10 @@ p, h1, h2, h3, h4, h5, h6, div, span, ul, li {
             grid-gap: 14px;
             gap: 14px;
             color: #666;
+            .ng-fa-icon {
+              font-size: 18px;
+              margin: 0 8px 0 0;
+            }
           }
           ul.skills {
             list-style: none;
@@ -285,6 +293,25 @@ p, h1, h2, h3, h4, h5, h6, div, span, ul, li {
               counter-increment: counter;
               flex: 0 0 266px;
               padding: 20px;
+            }
+            .process-box {
+              font-size: 14px;
+              line-height: 1.57;
+              text-align: left;
+              .index {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background-color: #000;
+                color: #fff;
+                font-size: 14px;
+                line-height: 1;
+                margin-bottom: 6px;
+              }
             }
           }
           .cta {

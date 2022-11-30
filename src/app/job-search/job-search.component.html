@@ -20,8 +20,8 @@
                 <div class="job-prevew" (click)="selectJob($event, job)">
                   <div class="title">{{ job.publicTitle }}</div>
                   <div class="description">
-                    <div>{{ job.industry }}</div>
-                    <div>{{ showComponaySize(job.companySize) }}</div>
+                    <div><fa-icon [icon]="faBriefcase"></fa-icon>{{ job.industry }}</div>
+                    <div><fa-icon [icon]="faPeopleGroup"></fa-icon>{{ showComponaySize(job.companySize) }}</div>
                     <div><span>{{ showTimeSpacing(job.updatedDate) }}</span></div>
                   </div>
                   <div class="skills">
@@ -45,19 +45,19 @@
               <div class="detail-wrapper">
                 <div class="info-box">
                   <div>
-                    Industry: {{ currentJob.industry }}
+                    <fa-icon [icon]="faBriefcase"></fa-icon>Industry: {{ currentJob.industry }}
                   </div>
                   <div>
-                    Remote
+                    <fa-icon [icon]="faLocationDot"></fa-icon>Remote
                   </div>
                   <div>
-                    Company Size: {{ currentJob.companySize }}
+                    <fa-icon [icon]="faPeopleGroup"></fa-icon>Company Size: {{ showComponaySize(currentJob.companySize) }}
                   </div>
                   <div>
-                    Full-time
+                    <fa-icon [icon]="faCalendarCheck"></fa-icon>Full-time
                   </div>
                   <div>
-                    Not disclosed
+                    <fa-icon [icon]="faDollarSign"></fa-icon>Not disclosed
                   </div>
                 </div>
                 <div class="cta">

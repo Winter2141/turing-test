@@ -1,10 +1,26 @@
 <section class="guide-section">
   <div class="container">
     <div class="header">
-      <div class="headline"></div>
+      <div class="headline">
+        <h2 class="section-title">
+          <span>Why join Turing?</span>
+          <button>
+            <fa-icon [icon]="faCirclePlay"></fa-icon>
+            Watch Video
+          </button>
+        </h2>
+      </div>
     </div>
     <div class="card-list">
-      <div class="card"></div>
+      <div *ngFor="let item of cardData" class="card">
+        <div class="card-image">
+          <img class="image" [src]="item.image"/>
+        </div>
+        <div class="card-content">
+          <h3 class="title"><span class="index">{{ item.id }}</span>{{ item.title }}</h3>
+          <div class="content">{{ item.content }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

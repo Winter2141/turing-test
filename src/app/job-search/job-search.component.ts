@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Category, Job } from '../structure';
 import { jobs } from '../jobs';
 import { JobService } from '../job.service';
+import { faBuilding, faCalendarCheck  } from '@fortawesome/free-regular-svg-icons';
+import { faBriefcase, faPeopleGroup, faLocationDot, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-job-search',
@@ -9,7 +11,12 @@ import { JobService } from '../job.service';
   styleUrls: ['./job-search.component.scss']
 })
 export class JobSearchComponent implements OnInit {
-
+  faBuilding = faBuilding;
+  faBriefcase = faBriefcase;
+  faPeopleGroup = faPeopleGroup;
+  faLocationDot = faLocationDot;
+  faDollarSign = faDollarSign;
+  faCalendarCheck = faCalendarCheck;
   constructor(private jobService: JobService){}
 
   filters: Category[] = [

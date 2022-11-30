@@ -28,3 +28,10 @@ export interface Job {
   isActive: boolean,
   jobLanguageContent: JonContent[]
 }
+
+export interface Card {
+  id: number,
+  image: string,
+  title: string,
+  content: string
+}

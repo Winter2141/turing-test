@@ -8,6 +8,11 @@ p, h1, h2, h3, h4, h5, h6, div, span, ul, li {
   @media all and (max-width: 768px) {
     padding: 56px 0; 
   }
+  .container {
+    max-width: calc(1200px + 72px);
+    padding: 0 36px;
+    margin: 0 auto;
+  }
   .header {
     margin-bottom: 80px;
     display: flex;
@@ -20,6 +25,10 @@ p, h1, h2, h3, h4, h5, h6, div, span, ul, li {
         gap: 1.2rem 0.8rem;
         flex-wrap: wrap;
         margin-bottom: 0;
+        span {
+          font-size: 28px;
+          font-weight: 500;
+        }
         button {
           margin-left: 24px;
           font-size: 16px;
@@ -39,6 +48,64 @@ p, h1, h2, h3, h4, h5, h6, div, span, ul, li {
             color: #2e6edf;
             background-color: #fff;
           }
+          .ng-fa-icon {
+            font-size: 20px;
+            margin: 0 12px 0 0;
+          }
+        }
+      }
+    }
+  }
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+    @media all and (max-width: 768px) {
+      grid-template-columns: repeat(1,1fr);
+    }
+    .card {
+      background-color: #fff;
+      .card-image {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        margin-bottom: 24px;
+        padding: 2rem;
+        .image {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        .title {
+          display: flex;
+          line-height: 1.3;
+          margin-bottom: 1.1em;
+          font-weight: 500;
+          margin: 0 0 0.5em;
+          font-size: 20px;
+          .index {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 1.2em;
+            height: 1.2em;
+            border-radius: 50%;
+            line-height: 1;
+            color: #fff;
+            background-color: #000;
+            margin-right: 12px;
+          }
+        }
+        .content {
+          margin-bottom: 20px;
+          font-size: 16px;
         }
       }
     }
